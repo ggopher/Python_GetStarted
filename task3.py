@@ -4,7 +4,7 @@ while True:
         digit1 = digit + digit
         digit2 = digit1 + digit
         final_digit = int(digit2) + int(digit1) + int(digit)
-        print(final_digit)
+        print(f'{digit} + {digit1} + {digit2} = {final_digit}')
     else:
         print("Вы ввели не число\n")
         break
