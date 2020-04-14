@@ -18,19 +18,23 @@ while create_tuple=="y":
         continue
     else:
         break
-#matrix = zip(*goods)
 print(goods)
 
+structure = ["Название:", "Цена:", "Количество:", "Ед:"]
 
+"""
+#Для отладки
 goods = [
         (1, {'Название:': 'Компьютер', 'Цена:': '250', 'Количество:': '5', 'Ед:': 'шт'}),
-        (2, {'Название:': 'Стол', 'Цена:': '250', 'Количество:': '6', 'Ед:': 'шт'})
+        (2, {'Название:': 'Стол', 'Цена:': '260', 'Количество:': '6', 'Ед:': 'шт'})
         ]
-goods_sorted = []
-for i in goods:
-
-     goods_sorted.append(i[1])
-
-print(goods_sorted)
-sorted = zip(goods_sorted)
-print(list(sorted))
+"""
+products_analytics = {} #{key: (a, b, c), }
+result = []
+for key in structure:
+    #products_analytics[key] = result
+    result = []
+    for good in goods:
+        result.append(good[1][key])
+    products_analytics[key] = result
+print(f'\n\n\nОтсортированный список{products_analytics}')
