@@ -20,3 +20,17 @@ while create_tuple=="y":
         break
 #matrix = zip(*goods)
 print(goods)
+
+
+goods = [
+        (1, {'Название:': 'Компьютер', 'Цена:': '250', 'Количество:': '5', 'Ед:': 'шт'}),
+        (2, {'Название:': 'Стол', 'Цена:': '250', 'Количество:': '6', 'Ед:': 'шт'})
+        ]
+goods_sorted = []
+for i in goods:
+
+     goods_sorted.append(i[1])
+
+print(goods_sorted)
+sorted = zip(goods_sorted)
+print(list(sorted))
