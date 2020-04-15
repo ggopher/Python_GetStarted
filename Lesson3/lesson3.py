@@ -12,15 +12,15 @@ finally:
         print('Овцебык в любом случае')
 """
 
-#def my_sum(tmp: list):
-#    return tmp[0] + my_sum(tmp[1:]) if tmp else 0
-#print(my_sum([2,3,4]))
-#print('\n\n\n\n')
+def my_sum(tmp: list):
+    return tmp[0] + my_sum(tmp[1:]) if tmp else 0
+print(my_sum([2,3,4]))
+print('\n\n\n\n')
 
 
 def my_sum(*args):
     return args[0] + my_sum(*args[1:]) if args else 0
-print(my_sum(2,3,4, 5))
+print(my_sum(2,3,4,5))
 print('\n\n\n\n')
 
 
