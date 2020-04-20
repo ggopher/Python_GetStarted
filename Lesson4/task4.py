@@ -18,7 +18,8 @@ def generate(list: list):
 final = generate(list) #Создали генератор
 for i in final:        #Быстренько прогоняем генератор, т.к. конкретно в этой задаче пошаговое управление по сути не нужно.
     print(i)
-print(f'Финальный результат: new_list')
+    #final.__next__()
+print(f'Финальный результат: {new_list}')
 
 
 
