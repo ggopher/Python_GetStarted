@@ -13,7 +13,7 @@ def generate(lst: list):
     :param lst: list
     :return: generator
     """
-    prev_item = 0
+    prev_item = 999999999
     for item in lst:
        if item>prev_item:
             new_list.append(item)
@@ -24,3 +24,9 @@ final = generate(base_list) #Создали генератор
 list(final)
 
 print(f'Финальный результат: {new_list}')
+
+
+
+#второй способ (после разбора дз)
+result = [itm for marker, itm in enumerate(base_list) if marker and itm > base_list[marker - 1]]
+print(result)
