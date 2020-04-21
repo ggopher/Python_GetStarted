@@ -1,3 +1,8 @@
+"""
+Реализовать скрипт, в котором должна быть предусмотрена функция расчета заработной платы сотрудника.
+В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
+Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
+"""
 from sys import argv
 
 def salary(hours: int, price: int, bonus: int)-> int:
@@ -11,5 +16,11 @@ def salary(hours: int, price: int, bonus: int)-> int:
     return (hours * price) + bonus
 
 if __name__ == '__main__':
-         _, hours, price, bonus = argv
-         print(f'ЗАРПЛАТА: {salary(int(hours), int(price), int(bonus))}')
+    try:
+        _, hours, price, bonus = argv
+        print(f'ЗАРПЛАТА: {salary(int(hours), int(price), int(bonus))}')
+
+    except ValueError:
+        print("Скрипт запущен без дополнительных параметров")
+
+
