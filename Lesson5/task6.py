@@ -16,15 +16,15 @@ with open('task6.txt', 'r', encoding='UTF-8') as file:
     for line in file:
         line = line.split(" ")
         for itm in line[1:]:
-            i = itm.partition('(')[0]
             #Делаем через исключения, т.к. позволяет ловить другие непредвиденные ошибки.
             try:
-                struct.update({line[0] : struct[line[0]] + int(i)})
-            except KeyError:
-                try:
-                    struct.update({line[0] : int(i)})
-                except ValueError:
-                    continue
+                i = int(itm.partition('(')[0])                      #Проверяем, получилось ли число и отметаем всякие прочерки
             except ValueError:
-                    continue
+                continue
+            else:
+                try:
+                    struct.update({line[0]: struct[line[0]] + i})   #Проверяем, есть ли ключ в словаре и если нет, то создаем
+                except KeyError:
+                    struct.update({line[0]: i})
+
     print(struct)

@@ -7,7 +7,6 @@ with open('task1.txt', 'r', encoding='UTF-8') as file:
     text = file.read()
     lines = text.split('\n')
     print(f'Количество строк: {len(lines)}')
-    i = 1
+
     for itm in lines:
-        print(f'В строке №{i}, количество символов: {len(itm)}. Строка: {itm}')
-        i += 1
+        print(f'В строке №{lines.index(itm)+1}, количество символов: {len(itm)}. Строка: {itm}')

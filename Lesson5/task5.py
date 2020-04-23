@@ -5,14 +5,10 @@
 
 #Заполнение файла
 digits = [21, 42, 2351, 123412, 235, 235, 24523, 634, 34634, 7345, 745, 74585, 852, 21, 23, 3242, 52345]
-
 with open('task5.txt', 'w', encoding='UTF-8') as file:
-    file.write(str(digits)[1:-1]) #Заодно отсекаем скобки, т.к. пишем список и неохота заморачиваться с перебором элементов
+    file.write(' '.join([str(el) for el in digits])) #генерируем список, попутно переводявсе в строку, чтобы отработал join
 
 #Чтение файла
 with open('task5.txt', 'r', encoding='UTF-8') as file:
-    sum_digits = 0             #Сумма чисел
-    text = file.readline().split(', ')
-    for itm in text:
-        sum_digits += int(itm)
-    print(f'Сумма чисел: {sum_digits}')
+    text = list(map(int, file.readline().split(' '))) #Считываем, сразу переводим в int и отсекаем по ", ".
+    print(f'Сумма чисел: {sum(text)}')

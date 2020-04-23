@@ -3,11 +3,10 @@
 Определить, кто из сотрудников имеет оклад менее 20 тыс., вывести фамилии этих сотрудников. Выполнить подсчет средней величины дохода сотрудников.
 """
 with open('task3.txt', 'r', encoding='UTF-8') as file:
-    avg_sal = 0             #Средняя зарплата
-    text = file.readlines()
-    for line in text:
-        a, b = line.split(' ')
-        avg_sal += int(b)
-        if int(b)<15000:
-            print(f'Сотрудник: {a} имеет оклад ниже 15 000, а именно: {b}')
-    print(f'Средняя зарплата: {avg_sal / len(text)}')
+    avg_sal = list()             #Средняя зарплата. Через список удобнее, т.к. не нужен дополнительный счетчик - количество элементов в списке и есть счетчик
+    for line in file:
+        name, sal = line.split(' ')
+        avg_sal.append(int(sal))
+        if int(sal)<15000:
+            print(f'Сотрудник: {name} имеет оклад ниже 15 000, а именно: {sal}')
+    print(f'Средняя зарплата: {sum(avg_sal) / len(avg_sal)}')
