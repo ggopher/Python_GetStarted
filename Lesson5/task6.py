@@ -17,11 +17,14 @@ with open('task6.txt', 'r', encoding='UTF-8') as file:
         line = line.split(" ")
         for itm in line[1:]:
             i = itm.partition('(')[0]
-            if i=="—":
-                continue
-            else:
-                if struct.get(line[0])==None:
-                    struct.update({line[0] : int(i)})  # Через update лучше, т.к. если вдруг добавится новая дисциплина, она все равно будет посчитана
-                else:
-                    struct.update({line[0] : struct[line[0]] + int(i)})
+            #Делаем через исключения, т.к. позволяет ловить другие непредвиденные ошибки.
+            try:
+                struct.update({line[0] : struct[line[0]] + int(i)})
+            except KeyError:
+                try:
+                    struct.update({line[0] : int(i)})
+                except ValueError:
+                    continue
+            except ValueError:
+                    continue
     print(struct)
