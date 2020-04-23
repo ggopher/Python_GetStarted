@@ -24,7 +24,7 @@ with open('task7.txt', 'r', encoding='UTF-8') as file:
         comp_profit.update({name: profit})
         if profit>0:                            #Если прибыль, то включаем в список средней прибыли
             avg_profit.append(profit)
-    final = [comp_profit, {'Средняя прибыль': sum(avg_profit)/len(avg_profit)}]
+final = [comp_profit, {'Средняя прибыль': sum(avg_profit)/len(avg_profit)}]     #собираем список вида [{Компания: прибыль},{средняя прибыль: }]
 with open('task7.json', 'w', encoding='UTF-8') as file:
     json.dump(final, file)
     print(f'Наш JSON объект: {json.dumps(final)}')
