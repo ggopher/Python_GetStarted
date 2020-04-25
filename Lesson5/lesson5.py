@@ -22,6 +22,7 @@ import os
 # }
 
 folder = 'data'
+path = os.path.join(os.path.dirname(os.path.dirname(__file__)), folder)
 # print(__file__)
 #print(os.path.dirname(__file__))
 # print(os.path.join(os.path.dirname(__file__), folder))
