@@ -8,11 +8,9 @@
 """
 
 class Road:
-    __length = 0
-    __width = 0
     def __init__(self, length: int, width: int):
-        self.__length = length
-        self.__width = width
+        self._length = length
+        self._width = width
 
     def squaremeter(self, mass: int, cm: int):
         """
@@ -21,7 +19,7 @@ class Road:
         :param cm:  int
         :return: float
         """
-        return float(self.__length * self.__width * (mass / 1000) * cm)            #Ответ в тоннах
+        return float(self._length * self._width * (mass / 1000) * cm)            #Ответ в тоннах
 
 rd = Road(20, 5000)
 print(rd.squaremeter(25, 5))
