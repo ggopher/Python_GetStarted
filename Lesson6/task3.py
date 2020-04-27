@@ -26,7 +26,6 @@ class Worker:
 class Position(Worker):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        print('')
 
     def get_full_name(self):
         """

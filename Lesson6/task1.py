@@ -7,9 +7,10 @@
 """
 
 from time import sleep
+
 class TrafficLight:
     _color = 'Красный'
-
+    # __init__ и так запустится, но нам в нем конструировать нечего
     def running(self):
         """
         Переключаем режимы светофора
@@ -25,8 +26,6 @@ class TrafficLight:
         print(self._color)
         sleep(2)
         self.running()
-
-
 
 light = TrafficLight()
 light.running()

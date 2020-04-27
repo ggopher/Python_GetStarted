@@ -27,7 +27,7 @@ class Pencil(Stationery):
         Выводим сообщение
         :return: None
         """
-        print('Запуск отрисовки карандашом')
+        print('Запуск отрисовки карандашом\n')
 
 class Pen(Stationery):
 
@@ -39,7 +39,7 @@ class Pen(Stationery):
         Выводим сообщение
         :return: None
         """
-        print('Запуск отрисовки ручкой')
+        print('Запуск отрисовки ручкой\n')
 
 
 class Handle(Stationery):
@@ -51,8 +51,7 @@ class Handle(Stationery):
         Выводим сообщение
         :return: None
         """
-        print('Запуск отрисовки маркером')
-
+        print('Запуск отрисовки маркером\n')
 
 
 penc = Pencil('Карандаш')
