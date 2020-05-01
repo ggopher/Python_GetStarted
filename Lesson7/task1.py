@@ -18,34 +18,35 @@ class Matrix():
 
 
     def __str__(self):
+        """
+        Переопределяем поведение, чтобы при строковом выводе отдавать матрицу, оформленную в мультистроку.
+        :return: str
+        """
         result = ''
         for itm in self.matrix:
             result += ' '.join(map(str, itm)) + '\n'
         return result
 
     def __add__(self, other):       #переопределение оператора сложения
+        """
+        Складываем две одинаковые матрицы
+        :param other: Class
+        :return: Class
+        """
         result = self.matrix
         i = 0
         for line in matrix:
             ii = 0
             for itm in line:
-                result[i][ii] = itm + other[i][ii]
+                result[i][ii] = itm + other.matrix[i][ii]
                 ii += 1
             i += 1
         return Matrix(result)
 
 
-
-
 mtr = Matrix(matrix)
+mtr2 = Matrix(matrix2)
+print(mtr)
 
-res = mtr + matrix2
-
+res = mtr + mtr2
 print(res)
-
-
-# print(mtr)      #Вывод матрицы построчно
-
-
-
-matr = [1, 2, 4, 6, 4]

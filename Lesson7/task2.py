@@ -21,12 +21,11 @@ class MyInterface(ABC):
         pass
 
 
-# class Garment(MyInterface):
 class Garment(MyInterface):
     def __init__(self, name, type, size):
         self.__name = name
         self.type = type
-        self.__size = size
+        self.__size = size  #размер, вместо V, или H.
         self.consumption = 0
 
     @property
@@ -35,15 +34,22 @@ class Garment(MyInterface):
 
     @consumption.setter
     def consumption(self, consumption):
+        """
+        Определяем расход ткани в зависимости от типа класса.
+        :param consumption:
+        :return: int
+        """
         if self.type=='Пальто':
             self.__consumption = self.__size/6.5 + 0.5
         elif self.type=='Костюм':
             self.__consumption = 2 * self.__size + 0.3
         else:
-            self.__consumption =  'Неправильно задан тип, или размер одежды'
+            self.__consumption =  0
+            print('Неправильно задан тип, или размер одежды')
 
 
-# garm = Garment('Одежка1', 'Пальто', 14)
-garm = Garment('Одежка1', 'Костюм', 14)
+garm = Garment('Одежка1', 'Пальто', 14)
+garm2 = Garment('Одежка2', 'Костюм', 14)
 
 print(garm.consumption)
+print(garm2.consumption)

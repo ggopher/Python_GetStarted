@@ -48,7 +48,7 @@ class MyCls(MyInterface):
         return self.name == other.name
     def __call__(self, x, y):
         tmp = x ** y
-        return  f'{self.name} -- {tmp}'
+        return f'{self.name} -- {tmp}'
 
 
 
