@@ -159,12 +159,15 @@ if __name__ == '__main__':
         room = input('Введите комнату (стоп для выхода):\n')
         if room.lower() == 'стоп':
             exit()
-        eq_type = input('Введите тип устройства:\n').lower()
-        if eq_type == 'принтер':
-            warehouse.add_equipment(room, Printer())
-        elif eq_type == 'сканер':
-            warehouse.add_equipment(room, Scanner())
-        elif  eq_type == 'копир':
-            warehouse.add_equipment(room, Copier())
+        while True:
+            eq_type = input('Введите тип устройства:\n').lower()
+            if eq_type == 'принтер':
+                warehouse.add_equipment(room, Printer())
+            elif eq_type == 'сканер':
+                warehouse.add_equipment(room, Scanner())
+            elif  eq_type == 'копир':
+                warehouse.add_equipment(room, Copier())
+            else:
+                print('Данный тип устройств отсутствует в БД')
 
         warehouse.show_equipment()

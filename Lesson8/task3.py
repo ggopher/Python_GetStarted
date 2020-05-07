@@ -11,6 +11,10 @@ class AnyError(Exception):
 listing = list()
 while True:
     inpt_data = input("Введите данные:\n")
+
+    if inpt_data.lower() == 'стоп':
+        print(listing)
+        break
     try:
         if inpt_data.isdigit():
             listing.append(int(inpt_data))
@@ -18,9 +22,6 @@ while True:
             raise AnyError("Ошибка типа данных! Надо вводить числа!")
     except AnyError as mr:
         print(mr)
-
-    if inpt_data == 'list':
-        print(listing)
 
 listing.append(int(1))
 
